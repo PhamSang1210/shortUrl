@@ -8,7 +8,7 @@ class UrlController {
 
     static async setUrls(req, res) {
         return res.status(200).json({
-            newData: await UrlService.setUrl(req.body),
+            newData: await UrlService.setUrlshort(req.body),
         });
     }
 }

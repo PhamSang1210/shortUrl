@@ -17,10 +17,10 @@ class UrlService {
             )
             .lean();
 
-        const targetLongUrl = targetUrl.url.longUrl;
+        const targetLongUrl = targetUrl?.url?.longUrl;
         return targetLongUrl;
     }
-    static async setURL(url) {
+    static async setUrlshort(url) {
         //
         const longUrl = url.longUrl;
         // eslint-disable-next-line no-unused-vars
