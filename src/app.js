@@ -6,7 +6,7 @@ import compression from "compression";
 import helmet from "helmet";
 import instanceDatabase from "./database/init.mongodb.js";
 import routes from "./routes/index.routes.js";
-import { overLoadServer } from "./config/connect.mongodb.js";
+// import { overLoadServer } from "./config/connect.mongodb.js";
 
 app.use(cors());
 app.use(helmet());
@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 
 // Databae
 instanceDatabase;
-overLoadServer();
+// overLoadServer();
 
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
