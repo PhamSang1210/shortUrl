@@ -21,16 +21,18 @@ class UrlService {
         return targetLongUrl;
     }
     static async setUrlshort(url) {
+        console.log("🚀 ~ UrlService ~ setUrlshort ~ url:", url);
         //
         const longUrl = url.longUrl;
         // eslint-disable-next-line no-unused-vars
-        const shortUrl = url?.shortUrl;
+        const shortUrls = url?.shortUrl;
+        console.log("🚀 ~ UrlService ~ setUrlshort ~ shortUrls:", shortUrls);
 
         const basicUrl = await urlModel.create({
             "url.longUrl": longUrl,
-            "url.shortUrl":
-                "https://url-fi2d.onrender.com/" + shortUrl ||
-                "https://url-fi2d.onrender.com/" + genatorChar(),
+            "url.shortUrl": shortUrls
+                ? " https://url-fi2d.onrender.com/" + shortUrls
+                : "https://url-fi2d.onrender.com/" + genatorChar(),
         });
 
         return basicUrl;
